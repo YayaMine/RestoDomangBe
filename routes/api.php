@@ -13,12 +13,13 @@ Route::post('/register', [RegisterController::class, 'register']);
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/users', [UserController::class, 'index']); // Ambil semua user
     // Route::post('/users', [UserController::class, 'store']); // Tambah user baru
+
     Route::get('/users/{id}', [UserController::class, 'show']); // Ambil user berdasarkan ID
     Route::put('/users/{id}', [UserController::class, 'update']); // Update user berdasarkan ID
     Route::delete('/users/{id}', [UserController::class, 'destroy']); // Hapus user berdasarkan ID
 });
 
-
+Route::post('/users', [UserController::class, 'create']);
 
 // route untuk login & logout
 Route::post('/login', [AuthController::class, 'login']); // Login
