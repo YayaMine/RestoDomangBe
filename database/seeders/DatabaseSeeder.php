@@ -9,6 +9,8 @@ class DatabaseSeeder extends Seeder
 {
     public function run()
     {
+
+
         User::create([
             'name' => 'Admin User',
             'email' => 'admin@example.com',
@@ -22,5 +24,7 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password'),
             'role' => 'member', // Set role sebagai member
         ]);
+
+
     }
 }

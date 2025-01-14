@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Table;
+use App\Models\Meja;
 use Illuminate\Http\Request;
 
 class TableController extends Controller
@@ -17,7 +17,7 @@ class TableController extends Controller
         ]);
 
         // Membuat meja baru
-        $meja = Table::create($request->all());
+        $meja = Meja::create($request->all());
 
         return response()->json($meja, 201); // Mengembalikan data meja yang baru dibuat
     }
@@ -26,7 +26,7 @@ class TableController extends Controller
     public function index()
     {
         // Mengambil semua data meja
-        $meja = Table::all();
+        $meja = Meja::all();
 
         return response()->json($meja); // Mengembalikan data meja
     }
@@ -35,7 +35,7 @@ class TableController extends Controller
     public function show($id)
     {
         // Mencari meja berdasarkan ID
-        $meja = Table::find($id);
+        $meja = Meja::find($id);
 
         // Jika meja tidak ditemukan
         if (!$meja) {
@@ -55,7 +55,7 @@ class TableController extends Controller
         ]);
 
         // Mencari meja berdasarkan ID
-        $meja = Table::find($id);
+        $meja = Meja::find($id);
 
         // Jika meja tidak ditemukan
         if (!$meja) {
@@ -72,7 +72,7 @@ class TableController extends Controller
     public function destroy($id)
     {
         // Mencari meja berdasarkan ID
-        $meja = Table::find($id);
+        $meja = Meja::find($id);
 
         // Jika meja tidak ditemukan
         if (!$meja) {
